@@ -9,20 +9,21 @@
 <body>
 
     <!-- NAVBAR -->
-    <header>
-        <nav>
-            <h3 class="logo">Ethan Passard</h3>
-            <ul class="nav-links">
-                <li><a href="#hero">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#experiences">Expériences</a></li>
-                <li><a href="#veille">Veille</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <h3 class="logo">Ethan Passard</h3>
+        <ul class="nav-links">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#experiences">Expériences</a></li>
+            <li><a href="#veille">Veille</a></li>
+            <li><a href="#documents">Documents</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
     <!-- SECTION ACCUEIL -->
     <section id="hero">
@@ -41,7 +42,20 @@
     <!-- SECTION À PROPOS -->
     <section id="apropos" class="section">
         <h2>À propos</h2>
-        <p>Texte à compléter ici...</p>
+        <div class="about-container">
+            <div class="about-text">
+                <p>
+                    Étudiant en développement informatique et passionné de sport, je vois le code comme un terrain d’entraînement : rigueur, stratégie et progression constante.
+                    Je me spécialise actuellement dans le développement web et applicatif, où j’aime transformer des idées en projets concrets et intuitifs.
+                    Curieux et déterminé, je cherche à progresser en explorant de nouvelles technologies et en repoussant mes limites.
+                </p>
+            </div>
+            <div class="about-photo">
+                <a href="https://www.youtube.com/watch?v=###" target="_blank">
+                    <img src="image de moi.jpg" alt="Photo de Ethan Passard" title="Clique pour voir ma présentation 🎥">
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- SECTION COMPÉTENCES -->
@@ -50,15 +64,15 @@
         <div class="skills">
             <div class="skill">
                 <span>Java</span>
-                <div class="bar"><div class="progress" style="width: 80%;"></div></div>
+                <div class="bar"><div class="progress" style="width: 15%;"></div></div>
             </div>
             <div class="skill">
                 <span>PHP</span>
-                <div class="bar"><div class="progress" style="width: 70%;"></div></div>
+                <div class="bar"><div class="progress" style="width: 20%;"></div></div>
             </div>
             <div class="skill">
                 <span>Python</span>
-                <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+                <div class="bar"><div class="progress" style="width: 10%;"></div></div>
             </div>
         </div>
     </section>
@@ -73,32 +87,134 @@
         </div>
     </section>
 
-    <!-- SECTION EXPÉRIENCES -->
-    <section id="experiences" class="section alt">
-        <h2>Expériences</h2>
-        <p>Ajoute ici tes stages, alternances ou projets notables.</p>
-    </section>
+<!-- SECTION EXPÉRIENCES -->
+<section id="experiences" class="section alt">
+    <h2>Parcours & Expériences</h2>
 
-    <!-- SECTION VEILLE -->
-    <section id="veille" class="section">
-        <h2>Veille technologique</h2>
-        <p>Exemples de sujets : intelligence artificielle, cybersécurité, etc.</p>
-    </section>
+    <div class="timeline">
 
-    <!-- SECTION CONTACT -->
-    <section id="contact" class="section alt">
-        <h2>Contact</h2>
-        <form>
-            <input type="text" placeholder="Nom" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Votre message..." required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
+        <div class="timeline-item">
+            <div class="timeline-date">2017 / 2021</div>
+            <div class="timeline-content">
+                <h3>Collège général L’Espérance</h3>
+                <p>Études générales. Premiers contacts avec les outils numériques et naissance de l’intérêt pour l’informatique.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2021 / 2022</div>
+            <div class="timeline-content">
+                <h3>2nde – Lycée privé Robert Schuman</h3>
+                <p>Début du parcours professionnel en filière Systèmes Numériques (SN). Initiation à la logique électronique et aux bases de la programmation. <strong>Stage chez Transatel Télécom</strong> : découverte du monde des télécommunications.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2022 / 2023</div>
+            <div class="timeline-content">
+                <h3>1ère – Lycée privé Robert Schuman</h3>
+                <p>Approfondissement des systèmes numériques et de l’infrastructure réseau. <strong>Stage chez Veolia Eau Île-de-France</strong> : assistance technique et maintenance informatique.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2023 / 2024</div>
+            <div class="timeline-content">
+                <h3>Terminale – Lycée privé Robert Schuman</h3>
+                <p>Préparation du baccalauréat professionnel SN. <strong>Stage chez HBI (Holding Brigantino Investissement)</strong> : support technique et participation à la gestion du parc informatique.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2024 / 2025</div>
+            <div class="timeline-content">
+                <h3>1ère année BTS SIO option SLAM</h3>
+                <p>Formation centrée sur le développement web et applicatif. <strong>Stage à l’Assomption Bondy</strong> : création de projets web et initiation à la gestion de bases de données.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2025 / 2026</div>
+            <div class="timeline-content">
+                <h3>2ᵉ année BTS SIO option SLAM</h3>
+                <p>Alternance à l’<strong>École Assomption Bondy</strong>. Développement d’applications web et renforcement des compétences en gestion de projet et en programmation.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- SECTION VEILLE TECHNOLOGIQUE -->
+<section id="veille" class="section">
+    <h2>Veille technologique</h2>
+    <div class="veille-container">
+        <p>
+            Ici, je partage ma veille technologique : les sujets, outils et tendances que je suis pour rester à jour dans le monde du développement.
+        </p>
+
+        <div class="veille-grid">
+            <div class="veille-card">
+                <h3>🌐 Développement web</h3>
+                <p>Évolution des frameworks JavaScript, nouvelles pratiques front-end et veille sur les standards du web.</p>
+            </div>
+            <div class="veille-card">
+                <h3>🤖 Intelligence artificielle</h3>
+                <p>Exploration des usages de l’IA dans les applications modernes et les outils de développement.</p>
+            </div>
+            <div class="veille-card">
+                <h3>⚙️ Sécurité et cloud</h3>
+                <p>Surveillance des nouveautés liées à la cybersécurité, au cloud computing et aux bonnes pratiques DevOps.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION DOCUMENTS -->
+<section id="documents" class="section alt">
+    <h2>Documents</h2>
+    <p style="text-align: center; margin-bottom: 40px;">
+        Retrouvez ici mes documents professionnels à jour : CV, lettre de motivation et autres fichiers utiles.
+    </p>
+
+    <div class="doc-grid">
+        <a href="documents/CV_Ethan_Passard.pdf" class="doc-card" target="_blank">
+            📄 <span>Mon CV</span>
+        </a>
+
+        <a href="documents/Lettre_Motivation_Ethan_Passard.pdf" class="doc-card" target="_blank">
+            📝 <span>Lettre de motivation</span>
+        </a>
+
+        <a href="documents/Tableau_Synthese.pdf" class="doc-card" target="_blank">
+            📊 <span>Tableau de synthèse</span>
+        </a>
+    </div>
+</section>
+
+<!-- SECTION CONTACT -->
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p style="text-align: center; margin-bottom: 40px;">
+        Tu veux discuter, collaborer ou juste échanger avec moi ?<br>
+        Voici les meilleurs moyens pour me contacter :
+    </p>
+
+    <div class="contact-buttons">
+        <a href="https://www.instagram.com/ethan.psrd/" class="contact-btn instagram" target="_blank">
+            📸 Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/ethan-passard-0255a6266/" class="contact-btn linkedin" target="_blank">
+            💼 LinkedIn
+        </a>
+        <a href="https://github.com/Eythannne" class="contact-btn github" target="_blank">
+            🧑‍💻 GitHub
+        </a>
+    </div>
+</section>
 
     <footer>
         <p>© 2025 - Ethan Passard</p>
     </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
