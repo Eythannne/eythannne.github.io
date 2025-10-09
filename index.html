@@ -1,13 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio</title>
-    <link href="styles.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ethan Passard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Portfolio</h1>
-    <p>Voici mon portfolio</p>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+            <h3 class="logo">Ethan Passard</h3>
+            <ul class="nav-links">
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#veille">Veille</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION ACCUEIL -->
+    <section id="hero">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="fond annimé espace.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>Ethan Passard</h1>
+            <p class="tagline">Code, performance et persévérance. Comme sur un court, chaque ligne compte.</p>
+            <a href="#apropos" class="btn">Découvrir</a>
+        </div>
+    </section>
+
+    <!-- SECTION À PROPOS -->
+    <section id="apropos" class="section">
+        <h2>À propos</h2>
+        <p>Texte à compléter ici...</p>
+    </section>
+
+    <!-- SECTION COMPÉTENCES -->
+    <section id="competences" class="section alt">
+        <h2>Compétences</h2>
+        <div class="skills">
+            <div class="skill">
+                <span>Java</span>
+                <div class="bar"><div class="progress" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>PHP</span>
+                <div class="bar"><div class="progress" style="width: 70%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>Python</span>
+                <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PROJETS -->
+    <section id="projets" class="section">
+        <h2>Projets</h2>
+        <div class="project-grid">
+            <div class="project-card">Projet 1</div>
+            <div class="project-card">Projet 2</div>
+            <div class="project-card">Projet 3</div>
+        </div>
+    </section>
+
+    <!-- SECTION EXPÉRIENCES -->
+    <section id="experiences" class="section alt">
+        <h2>Expériences</h2>
+        <p>Ajoute ici tes stages, alternances ou projets notables.</p>
+    </section>
+
+    <!-- SECTION VEILLE -->
+    <section id="veille" class="section">
+        <h2>Veille technologique</h2>
+        <p>Exemples de sujets : intelligence artificielle, cybersécurité, etc.</p>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="section alt">
+        <h2>Contact</h2>
+        <form>
+            <input type="text" placeholder="Nom" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Votre message..." required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 - Ethan Passard</p>
+    </footer>
+
 </body>
 </html>
