@@ -31,3 +31,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// --- AFFICHAGE PROGRESSIF DES UPDATES DE VEILLE (version animée) ---
+const updates = document.querySelectorAll(".veille-updates .update");
+const voirPlusBtn = document.getElementById("voir-plus-btn");
+
+if (updates.length > 5 && voirPlusBtn) {
+    updates.forEach((update, index) => {
+        if (index >= 5) {
+            update.classList.add("hidden");
+        } else {
+            update.classList.add("visible");
+        }
+    });
+
+    let expanded = false;
+
+    voirPlusBtn.addEventListener("click", () => {
+        expanded = !expanded;
+
+        updates.forEach((update, index) => {
+            if (index >= 5) {
+                if (expanded) {
+                    update.classList.remove("hidden");
+                    update.classList.add("visible");
+                } else {
+                    update.classList.remove("visible");
+                    update.classList.add("hidden");
+                }
+            }
+        });
+
+        voirPlusBtn.textContent = expanded ? "Voir moins ▲" : "Voir plus ▼";
+    });
+}
