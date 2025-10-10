@@ -332,10 +332,16 @@ button:hover {
 
 /* --- VEILLE TECHNOLOGIQUE --- */
 .veille-container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    text-align: center;
-    line-height: 1.6;
+    padding: 0 60px; /* ajoute de la marge interne à gauche/droite */
+    line-height: 1.8;
+}
+
+.veille-container p {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 18px; /* petit espace entre les paragraphes */
 }
 
 .veille-updates {
@@ -463,8 +469,12 @@ button:hover {
     box-shadow: 0 0 25px rgba(123, 97, 255, 0.7);
 }
 
-.contact-btn.email {
-    background: linear-gradient(90deg, #7b61ff, #00bcd4);
+.contact-btn.mail {
+    background: linear-gradient(90deg, #ff7b7b, #ffb86c);
+}
+
+.contact-btn.mail:hover {
+    box-shadow: 0 0 15px rgba(255, 150, 100, 0.6);
 }
 
 .contact-btn.linkedin {
@@ -473,6 +483,83 @@ button:hover {
 
 .contact-btn.github {
     background: linear-gradient(90deg, #333, #666);
+}
+
+.contact-mail {
+    text-align: center;
+    font-size: 1.2em;
+    color: #d4caff;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+/* --- COMPÉTENCES EN DEUX COLONNES --- */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.skills-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.skills-column h3 {
+    text-align: center;
+    color: #00bcd4;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.bar {
+    background: #222;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    background: linear-gradient(90deg, #7b61ff, #00bcd4);
+    height: 100%;
+}
+
+/* --- COMPÉTENCES PERSONNELLES --- */
+.soft-skills {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.soft-skills li {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 8px rgba(123, 97, 255, 0.2);
+}
+
+.soft-skills li:hover {
+    background: rgba(123, 97, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
 }
 
 /* --- FOOTER --- */
@@ -516,5 +603,12 @@ footer {
 
     .timeline-content {
         font-size: 0.9em;
+    }
+}
+
+@media (max-width: 900px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
