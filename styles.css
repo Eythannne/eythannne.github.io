@@ -338,24 +338,72 @@ button:hover {
     line-height: 1.6;
 }
 
-.veille-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.veille-updates {
+    max-width: 900px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
     gap: 25px;
-    margin-top: 40px;
 }
 
-.veille-card {
+.update {
     background: rgba(255, 255, 255, 0.05);
-    padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s;
+    padding: 18px 25px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(123, 97, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
-.veille-card:hover {
-    transform: translateY(-5px);
+.update:hover {
+    transform: translateX(5px);
     box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+}
+
+/* --- Animation slide --- */
+.update.hidden {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    pointer-events: none;
+    transition: all 0.6s ease;
+}
+
+.update.visible {
+    max-height: 400px; /* assez grand pour n’importe quel bloc */
+    opacity: 1;
+    margin: 15px 0;
+    transition: all 0.6s ease;
+}
+
+.update-date {
+    color: #00bcd4;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.voir-plus-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#voir-plus-btn {
+    background: linear-gradient(90deg, #7b61ff, #00bcd4);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#voir-plus-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(123, 97, 255, 0.5);
 }
 
 /* --- DOCUMENTS --- */
@@ -426,7 +474,6 @@ button:hover {
 .contact-btn.github {
     background: linear-gradient(90deg, #333, #666);
 }
-
 
 /* --- FOOTER --- */
 footer {
