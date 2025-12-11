@@ -64,4 +64,20 @@ if (updates.length > 5 && voirPlusBtn) {
 
         voirPlusBtn.textContent = expanded ? "Voir moins ▲" : "Voir plus ▼";
     });
+
+// ===== MODALS PROJETS =====
+    function openProject(id) {
+        document.getElementById(id).style.display = "flex";
+    }
+
+    function closeProject(id) {
+        document.getElementById(id).style.display = "none";
+    }
+
+// Fermer modal si clic à l'extérieur
+    window.addEventListener("click", function(e) {
+        document.querySelectorAll(".project-modal").forEach(modal => {
+            if (e.target === modal) modal.style.display = "none";
+        });
+    });
 }
