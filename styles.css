@@ -234,12 +234,20 @@ h2 {
     box-shadow: 0 0 15px rgba(123, 97, 255, 0.5);
 }
 
-/* ===== MODAL PROJET ===== */
+.project-short {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #d4caff;
+}
+
+/* ===== MODALS PROJETS ===== */
 .project-modal {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(6px);
     justify-content: center;
@@ -255,6 +263,10 @@ h2 {
     border-radius: 15px;
     box-shadow: 0 0 25px rgba(123, 97, 255, 0.4);
     animation: fadeIn 0.3s ease;
+
+    /* Ajout essentiel pour le scroll interne */
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .close {
@@ -287,7 +299,6 @@ code {
     from { transform: scale(0.95); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
-
 
 /* --- SECTION EXPÉRIENCES / TIMELINE --- */
 .timeline {
@@ -688,4 +699,29 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+}
+
+/* Empêche le scroll du body quand un modal est ouvert */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.github-btn {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0 auto;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #333, #666);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(123, 97, 255, 0.4);
+    transition: 0.3s ease;
+}
+
+.github-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 18px rgba(123, 97, 255, 0.7);
 }

@@ -1,4 +1,6 @@
-// --- SURBRILLANCE DU LIEN ACTIF SELON LA SECTION ---
+// ---------------------------------------------
+// SURBRILLANCE DU LIEN ACTIF SELON LA SECTION
+// ---------------------------------------------
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
@@ -21,7 +23,10 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// --- DÉFILEMENT FLUIDE ENTRE LES SECTIONS ---
+
+// ---------------------------------------------
+// DÉFILEMENT FLUIDE ENTRE LES SECTIONS
+// ---------------------------------------------
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -32,7 +37,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// --- AFFICHAGE PROGRESSIF DES UPDATES DE VEILLE (version animée) ---
+
+// ---------------------------------------------
+// VEILLE TECHNOLOGIQUE (voir plus / voir moins)
+// ---------------------------------------------
 const updates = document.querySelectorAll(".veille-updates .update");
 const voirPlusBtn = document.getElementById("voir-plus-btn");
 
@@ -64,20 +72,28 @@ if (updates.length > 5 && voirPlusBtn) {
 
         voirPlusBtn.textContent = expanded ? "Voir moins ▲" : "Voir plus ▼";
     });
-
-// ===== MODALS PROJETS =====
-    function openProject(id) {
-        document.getElementById(id).style.display = "flex";
-    }
-
-    function closeProject(id) {
-        document.getElementById(id).style.display = "none";
-    }
-
-// Fermer modal si clic à l'extérieur
-    window.addEventListener("click", function(e) {
-        document.querySelectorAll(".project-modal").forEach(modal => {
-            if (e.target === modal) modal.style.display = "none";
-        });
-    });
 }
+
+
+// ---------------------------------------------
+// ====== MODALS PROJETS ======
+// ---------------------------------------------
+function openProject(id) {
+    document.getElementById(id).style.display = "flex";
+    document.body.classList.add("no-scroll");  // empêche scroll du body
+}
+
+function closeProject(id) {
+    document.getElementById(id).style.display = "none";
+    document.body.classList.remove("no-scroll");
+}
+
+// Fermer si clic à l’extérieur
+window.addEventListener("click", function(e) {
+    document.querySelectorAll(".project-modal").forEach(modal => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.classList.remove("no-scroll");
+        }
+    });
+});
