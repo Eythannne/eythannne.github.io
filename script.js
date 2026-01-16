@@ -112,13 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("discover-btn");
     if (!btn) return;
 
-    // protection anti-doublon
-    if (btn.dataset.listenerAttached) return;
-    btn.dataset.listenerAttached = "true";
-
     btn.addEventListener("click", () => {
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
+        dataLayer.push({
             event: "click_decouvrir"
         });
 
