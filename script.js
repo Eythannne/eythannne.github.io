@@ -97,3 +97,18 @@ window.addEventListener("click", function(e) {
         }
     });
 });
+
+//recupere les stat pour GA4
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("discover-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+        if (typeof gtag === "function") {
+            gtag("event", "click_decouvrir", {
+                event_category: "engagement",
+                event_label: "scroll_apropos"
+            });
+        }
+    });
+});
