@@ -31,6 +31,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
+
+            // 🔥 TRACKING ICI
+            if (this.id === "discover-btn") {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: "click_decouvrir"
+                });
+            }
+
             e.preventDefault();
             target.scrollIntoView({ behavior: 'smooth' });
         }
@@ -98,17 +107,15 @@ window.addEventListener("click", function(e) {
     });
 });
 
-//recupere les stat pour GA4
+// ===== TRACKING CLICK "DÉCOUVRIR" VIA GTM =====
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("discover-btn");
     if (!btn) return;
 
     btn.addEventListener("click", () => {
-        if (typeof gtag === "function") {
-            gtag("event", "click_decouvrir", {
-                event_category: "engagement",
-                event_label: "scroll_apropos"
-            });
-        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "click_decouvrir"
+        });
     });
 });
