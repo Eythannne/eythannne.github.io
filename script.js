@@ -10,6 +10,7 @@ window.addEventListener("scroll", () => {
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 120;
         const sectionHeight = section.clientHeight;
+
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
             current = section.getAttribute("id");
         }
@@ -26,23 +27,15 @@ window.addEventListener("scroll", () => {
 
 // ---------------------------------------------
 // DÉFILEMENT FLUIDE ENTRE LES SECTIONS
+// (AUCUN TRACKING ICI)
 // ---------------------------------------------
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
+    anchor.addEventListener("click", function (e) {
+        const target = document.querySelector(this.getAttribute("href"));
+        if (!target) return;
 
-            // 🔥 TRACKING ICI
-            if (this.id === "discover-btn") {
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    event: "click_decouvrir"
-                });
-            }
-
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
     });
 });
 
@@ -55,11 +48,8 @@ const voirPlusBtn = document.getElementById("voir-plus-btn");
 
 if (updates.length > 5 && voirPlusBtn) {
     updates.forEach((update, index) => {
-        if (index >= 5) {
-            update.classList.add("hidden");
-        } else {
-            update.classList.add("visible");
-        }
+        update.classList.toggle("hidden", index >= 5);
+        update.classList.toggle("visible", index < 5);
     });
 
     let expanded = false;
@@ -69,13 +59,8 @@ if (updates.length > 5 && voirPlusBtn) {
 
         updates.forEach((update, index) => {
             if (index >= 5) {
-                if (expanded) {
-                    update.classList.remove("hidden");
-                    update.classList.add("visible");
-                } else {
-                    update.classList.remove("visible");
-                    update.classList.add("hidden");
-                }
+                update.classList.toggle("hidden", !expanded);
+                update.classList.toggle("visible", expanded);
             }
         });
 
@@ -85,11 +70,11 @@ if (updates.length > 5 && voirPlusBtn) {
 
 
 // ---------------------------------------------
-// ====== MODALS PROJETS ======
+// MODALS PROJETS
 // ---------------------------------------------
 function openProject(id) {
     document.getElementById(id).style.display = "flex";
-    document.body.classList.add("no-scroll");  // empêche scroll du body
+    document.body.classList.add("no-scroll");
 }
 
 function closeProject(id) {
@@ -97,8 +82,7 @@ function closeProject(id) {
     document.body.classList.remove("no-scroll");
 }
 
-// Fermer si clic à l’extérieur
-window.addEventListener("click", function(e) {
+window.addEventListener("click", e => {
     document.querySelectorAll(".project-modal").forEach(modal => {
         if (e.target === modal) {
             modal.style.display = "none";
@@ -107,14 +91,21 @@ window.addEventListener("click", function(e) {
     });
 });
 
-// ===== TRACKING CLICK "DÉCOUVRIR" VIA GTM =====
+
+// ---------------------------------------------
+// TRACKING UNIQUE DU BOUTON "DÉCOUVRIR"
+// ---------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("discover-btn");
     if (!btn) return;
 
+    // 🔒 Anti double attachement
+    if (btn.dataset.tracked === "true") return;
+    btn.dataset.tracked = "true";
+
     btn.addEventListener("click", () => {
         window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
+        window.dataLayer.push({
             event: "click_decouvrir"
         });
 
