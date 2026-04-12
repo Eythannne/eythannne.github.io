@@ -113,17 +113,16 @@ h2 {
 .availability-badge {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 8px;
     background: rgba(0, 230, 118, 0.08);
     border: 1px solid rgba(0, 230, 118, 0.3);
     color: #7effa0;
-    font-size: 0.82em;
+    font-size: 0.75em;
     font-weight: 500;
-    padding: 7px 18px;
+    padding: 5px 13px;
     border-radius: 25px;
-    margin-bottom: 22px;
-    backdrop-filter: blur(6px);
     letter-spacing: 0.3px;
+    white-space: nowrap;
 }
 
 .pulse-dot {
@@ -915,6 +914,10 @@ footer {
 @media (max-width: 900px) {
     .hamburger {
         display: flex;
+    }
+
+    .availability-badge {
+        display: none;
     }
 
     .nav-links {
