@@ -92,24 +92,6 @@ window.addEventListener("click", e => {
 
 
 // ---------------------------------------------
-// THÈME CLAIR / SOMBRE
-// ---------------------------------------------
-const themeToggle = document.getElementById("theme-toggle");
-const savedTheme  = localStorage.getItem("theme");
-
-if (savedTheme === "light") {
-    document.body.classList.add("light");
-    themeToggle.textContent = "☀️";
-}
-
-themeToggle.addEventListener("click", () => {
-    const isLight = document.body.classList.toggle("light");
-    themeToggle.textContent = isLight ? "☀️" : "🌙";
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-});
-
-
-// ---------------------------------------------
 // EASTER EGG MATRIX  (↑ → ↓ ←)
 // ---------------------------------------------
 const matrixSequence = ["ArrowUp", "ArrowRight", "ArrowDown", "ArrowLeft"];
