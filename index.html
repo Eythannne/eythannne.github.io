@@ -19,22 +19,43 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- PRÉLOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <p class="preloader-label">Portfolio</p>
+            <h2 class="preloader-name">Ethan Passard</h2>
+            <div class="preloader-bar">
+                <div class="preloader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CURSEUR LUMINEUX -->
+    <div id="cursor-glow"></div>
+
     <!-- NAVBAR -->
-<header>
-    <nav>
-        <h3 class="logo">Ethan Passard</h3>
-        <ul class="nav-links">
-            <li><a href="#hero">Accueil</a></li>
-            <li><a href="#apropos">À propos</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#experiences">Expériences</a></li>
-            <li><a href="#veille">Veille</a></li>
-            <li><a href="#documents">Documents</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <div id="scroll-progress"></div>
+        <nav>
+            <h3 class="logo">Ethan Passard</h3>
+            <button id="theme-toggle" aria-label="Changer de thème">🌙</button>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#veille">Veille</a></li>
+                <li><a href="#documents">Documents</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- SECTION ACCUEIL -->
     <section id="hero">
@@ -44,7 +65,7 @@
         <div class="overlay"></div>
 
         <div class="hero-content">
-            <h1>Ethan Passard</h1>
+            <h1 data-text="Ethan Passard">Ethan Passard</h1>
             <p class="tagline">Code, performance et persévérance. Comme sur un court, chaque ligne compte.</p>
             <a href="#apropos" class="btn" id="discover-btn">Découvrir</a>
         </div>
@@ -56,8 +77,8 @@
         <div class="about-container">
             <div class="about-text">
                 <p>
-                    Étudiant en développement informatique et passionné de sport, je vois le code comme un terrain d’entraînement : rigueur, stratégie et progression constante.
-                    Je me spécialise actuellement dans le développement web et applicatif, où j’aime transformer des idées en projets concrets et intuitifs.
+                    Étudiant en développement informatique et passionné de sport, je vois le code comme un terrain d'entraînement : rigueur, stratégie et progression constante.
+                    Je me spécialise actuellement dans le développement web et applicatif, où j'aime transformer des idées en projets concrets et intuitifs.
                     Curieux et déterminé, je cherche à progresser en explorant de nouvelles technologies et en repoussant mes limites.
                 </p>
             </div>
@@ -69,50 +90,49 @@
         </div>
     </section>
 
-   <!-- SECTION COMPÉTENCES -->
-   <section id="competences" class="section alt">
-       <h2>Compétences</h2>
+    <!-- SECTION COMPÉTENCES -->
+    <section id="competences" class="section alt">
+        <h2>Compétences</h2>
 
-       <div class="skills-container">
-           <!-- COMPÉTENCES TECHNIQUES -->
-           <div class="skills-column soft">
-               <h3>Techniques</h3>
+        <div class="skills-container">
+            <!-- COMPÉTENCES TECHNIQUES -->
+            <div class="skills-column soft">
+                <h3>Techniques</h3>
+                <ul class="soft-skills">
+                    <li data-tooltip="Maîtrisé sur tous mes projets web">HTML / CSS</li>
+                    <li data-tooltip="Utilisé côté front sur 3 projets">JavaScript</li>
+                    <li data-tooltip="Backend orienté objet (POO)">PHP</li>
+                    <li data-tooltip="Pack de jeux & projets console">Java</li>
+                    <li data-tooltip="Scripts & algorithmie">Python</li>
+                    <li data-tooltip="Application ToDoList graphique">JavaFX</li>
+                </ul>
+            </div>
 
-               <ul class="soft-skills">
-                   <li>HTML / CSS</li>
-                   <li>JavaScript</li>
-                   <li>PHP</li>
-                   <li>Java</li>
-                   <li>Python</li>
-                   <li>JavaFX</li>
-           </div>
-
-           <!-- COMPÉTENCES PERSONNELLES -->
-           <div class="skills-column soft">
-               <h3>Personnelles</h3>
-
-               <ul class="soft-skills">
-                   <li>Autonome</li>
-                   <li>Rigoureux</li>
-                   <li>Pédagogue</li>
-                   <li>Curieux</li>
-                   <li>Gestion de projet</li>
-                   <li>Persévérant</li>
-               </ul>
-           </div>
-       </div>
-   </section>
+            <!-- COMPÉTENCES PERSONNELLES -->
+            <div class="skills-column soft">
+                <h3>Personnelles</h3>
+                <ul class="soft-skills">
+                    <li data-tooltip="Capable de travailler seul efficacement">Autonome</li>
+                    <li data-tooltip="Attention au détail et à la qualité">Rigoureux</li>
+                    <li data-tooltip="J'aime expliquer et transmettre">Pédagogue</li>
+                    <li data-tooltip="Toujours en veille technologique">Curieux</li>
+                    <li data-tooltip="Planification & suivi de tâches">Gestion de projet</li>
+                    <li data-tooltip="Je ne lâche rien face aux défis">Persévérant</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <!-- SECTION PROJETS -->
     <section id="projets" class="section">
-            <h2>Projets</h2>
-            <div class="project-grid">
-                    <div class="project-card" onclick="openProject('projet1')">Pack jeux Java</div>
-                    <div class="project-card" onclick="openProject('projet2')">Site web d'un aeroport PHP</div>
-                    <div class="project-card" onclick="openProject('projet3')">Site perso E.T.H.A.N PHP</div>
-                    <div class="project-card" onclick="openProject('projet4')">Application ToDoList JavaFX</div>
-                </div>
-        </section>
+        <h2>Projets</h2>
+        <div class="project-grid">
+            <div class="project-card" onclick="openProject('projet1')">Pack jeux Java</div>
+            <div class="project-card" onclick="openProject('projet2')">Site web d'un aeroport PHP</div>
+            <div class="project-card" onclick="openProject('projet3')">Site perso E.T.H.A.N PHP</div>
+            <div class="project-card" onclick="openProject('projet4')">Application ToDoList JavaFX</div>
+        </div>
+    </section>
 
     <!-- ========== MODAL PROJET 1 ========== -->
     <div id="projet1" class="project-modal">
@@ -122,11 +142,11 @@
             <h2>Pack jeux Java</h2>
 
             <p class="project-short">
-                Développement d’un pack de mini-jeux en Java réunissant le Pendu, le Juste Prix,
+                Développement d'un pack de mini-jeux en Java réunissant le Pendu, le Juste Prix,
                 le Mastermind et la Bataille Navale. Chaque jeu exploite une logique dédiée :
                 gestion de lettres avec ArrayList, génération aléatoire, analyse
                 de séquences et manipulation de grilles. Un projet console complet, idéal pour
-                renforcer l’algorithmie, les structures de données et la modularité du code.
+                renforcer l'algorithmie, les structures de données et la modularité du code.
             </p>
 
             <h3>Technologies utilisées</h3>
@@ -148,15 +168,15 @@
             <h2>Site web d'un aeroport PHP POO</h2>
 
             <p class="project-short">
-                Conception d’un site web complet en PHP orienté objet permettant de gérer
-                différents éléments d’un système aérien : avions, utilisateurs, rôles, vols,
+                Conception d'un site web complet en PHP orienté objet permettant de gérer
+                différents éléments d'un système aérien : avions, utilisateurs, rôles, vols,
                 départs et arrivées.
                 Le projet repose sur une architecture POO structurée en classes (Avion, Vol,
                 Utilisateur, Role…), avec une interface dynamique en JavaScript et un design
                 en CSS.
-                Ce site illustre la mise en place d’un backend organisé, la gestion des
+                Ce site illustre la mise en place d'un backend organisé, la gestion des
                 permissions et la manipulation de données en MySQL.
-                Le site n'est pas herberger sur le web, juste ne local.
+                Le site n'est pas herberger sur le web, juste en local.
             </p>
 
             <h3>Technologies utilisées :</h3>
@@ -170,7 +190,6 @@
             <a href="https://github.com/Eythannne/AreoportX" class="github-btn" target="_blank">
                 🧑‍💻 Voir le code sur GitHub
             </a>
-
         </div>
     </div>
 
@@ -182,7 +201,7 @@
             <h2>Site perso E.T.H.A.N PHP</h2>
 
             <p class="project-short">
-                Développement d’un site web auto-hébergé sur Raspberry Pi permettant de centraliser
+                Développement d'un site web auto-hébergé sur Raspberry Pi permettant de centraliser
                 des ressources familiales : définitions, documents, projets, recettes, calendrier,
                 et outils personnels. Le système fonctionne en réseau local avec gestion future des rôles,
                 authentification, modules indépendants et base de données MariaDB.
@@ -216,8 +235,8 @@
                 graphique simple et ergonomique pour gérer des tâches au quotidien.
                 Le projet intègre une base de données,
                 permettant de sauvegarder, charger et mettre à jour les tâches de manière persistante.
-                L’application met en avant la gestion d’événements JavaFX, la manipulation de données
-                et la structuration propre d’un projet Java avec interface graphique.
+                L'application met en avant la gestion d'événements JavaFX, la manipulation de données
+                et la structuration propre d'un projet Java avec interface graphique.
             </p>
 
             <h3>Technologies utilisées :</h3>
@@ -232,252 +251,272 @@
         </div>
     </div>
 
-<!-- SECTION EXPÉRIENCES -->
-<section id="experiences" class="section alt">
-    <h2>Parcours & Expériences</h2>
+    <!-- SECTION EXPÉRIENCES -->
+    <section id="experiences" class="section alt">
+        <h2>Parcours & Expériences</h2>
 
-    <div class="timeline">
+        <div class="timeline">
 
-        <div class="timeline-item">
-            <div class="timeline-date">2025 / 2026</div>
-            <div class="timeline-content">
-                <h3>2ᵉ année BTS SIO option SLAM</h3>
-                <p>Alternance à l’<strong>École Assomption Bondy</strong>. Développement d’applications web et renforcement des compétences en gestion de projet et en programmation.</p>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 / 2026</div>
+                <div class="timeline-content">
+                    <h3>2ᵉ année BTS SIO option SLAM</h3>
+                    <p>Alternance à l'<strong>École Assomption Bondy</strong>. Développement d'applications web et renforcement des compétences en gestion de projet et en programmation.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-date">2024 / 2025</div>
-            <div class="timeline-content">
-                <h3>1ère année BTS SIO option SLAM</h3>
-                <p>Formation centrée sur le développement web et applicatif. <strong>Stage à l’Assomption Bondy</strong> : création de projets web et initiation à la gestion de bases de données.</p>
+            <div class="timeline-item">
+                <div class="timeline-date">2024 / 2025</div>
+                <div class="timeline-content">
+                    <h3>1ère année BTS SIO option SLAM</h3>
+                    <p>Formation centrée sur le développement web et applicatif. <strong>Stage à l'Assomption Bondy</strong> : création de projets web et initiation à la gestion de bases de données.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-date">2021 / 2024</div>
-            <div class="timeline-content">
-                <h3>Lycée privé Robert Schuman</h3>
-                <p>Parcours professionnel en filière Systèmes Numériques (SN). Obtention du BAC mention assez bien.</p>
-                <p><strong>- Stage chez Transatel Télécom</strong><p>
-                <p><strong>- Stage chez Veolia Eau Île-de-France</strong><p>
-                <p><strong>- Stage chez HBI (Holding Brigantino Investissement)</strong><p>
+            <div class="timeline-item">
+                <div class="timeline-date">2021 / 2024</div>
+                <div class="timeline-content">
+                    <h3>Lycée privé Robert Schuman</h3>
+                    <p>Parcours professionnel en filière Systèmes Numériques (SN). Obtention du BAC mention assez bien.</p>
+                    <p><strong>- Stage chez Transatel Télécom</strong></p>
+                    <p><strong>- Stage chez Veolia Eau Île-de-France</strong></p>
+                    <p><strong>- Stage chez HBI (Holding Brigantino Investissement)</strong></p>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-date">2017 / 2021</div>
-            <div class="timeline-content">
-                <h3>Collège privé L’Espérance</h3>
-                <p>Études générales. Premiers contacts avec les outils numériques et naissance de l’intérêt pour l’informatique.</p>
+            <div class="timeline-item">
+                <div class="timeline-date">2017 / 2021</div>
+                <div class="timeline-content">
+                    <h3>Collège privé L'Espérance</h3>
+                    <p>Études générales. Premiers contacts avec les outils numériques et naissance de l'intérêt pour l'informatique.</p>
+                </div>
             </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- SECTION VEILLE TECHNOLOGIQUE -->
+    <section id="veille" class="section">
+        <h2>Veille technologique</h2>
 
-<!-- SECTION VEILLE TECHNOLOGIQUE -->
-<section id="veille" class="section">
-    <h2>Veille technologique</h2>
-
-    <div class="veille-container">
-        <p>
-            Ma veille technologique porte sur un domaine qui me passionne : <strong>l’informatique dans l’aéronautique et le spatial</strong>.
-            Ce secteur combine des technologies de pointe — embarquées, sécurisées et ultra-fiables — où chaque ligne de code peut avoir un impact réel.
-        </p>
-        <p>
-            Je m’intéresse particulièrement à la manière dont les <strong>systèmes informatiques embarqués</strong> sont conçus pour résister aux contraintes extrêmes,
-            ainsi qu’à l’usage de l’<strong>intelligence artificielle</strong> dans la navigation, le pilotage autonome et le traitement des données spatiales.
-        </p>
-        <p>
-            Pour suivre l’évolution de ces sujets, je consulte régulièrement les publications de l’<strong>ESA</strong>,
-            de la <strong>NASA</strong>, les articles spécialisés d’<strong>Air & Cosmos</strong> et les discussions techniques sur des forums comme
-            <strong>Stack Exchange – Space</strong> ou certains projets open source liés à l’aéronautique sur <strong>GitHub</strong>.
-        </p>
-    </div>
-
-    <h3 style="text-align:center; margin-top:70px;">Évolution de la veille</h3>
-
-    <div class="veille-updates">
-
-        <!-- ⭐️ TRI DU PLUS RÉCENT AU PLUS ANCIEN -->
-        <div class="update">
-            <span class="update-date">Mars 2026</span>
-            <p>NASA annonce des avancées dans l’utilisation de l’IA embarquée pour optimiser la gestion énergétique des satellites, permettant d’augmenter leur durée de vie sans intervention humaine.
-                <a href="https://www.nasa.gov" target="_blank">[Source : NASA]</a>
+        <div class="veille-container">
+            <p>
+                Ma veille technologique porte sur un domaine qui me passionne : <strong>l'informatique dans l'aéronautique et le spatial</strong>.
+                Ce secteur combine des technologies de pointe — embarquées, sécurisées et ultra-fiables — où chaque ligne de code peut avoir un impact réel.
+            </p>
+            <p>
+                Je m'intéresse particulièrement à la manière dont les <strong>systèmes informatiques embarqués</strong> sont conçus pour résister aux contraintes extrêmes,
+                ainsi qu'à l'usage de l'<strong>intelligence artificielle</strong> dans la navigation, le pilotage autonome et le traitement des données spatiales.
+            </p>
+            <p>
+                Pour suivre l'évolution de ces sujets, je consulte régulièrement les publications de l'<strong>ESA</strong>,
+                de la <strong>NASA</strong>, les articles spécialisés d'<strong>Air & Cosmos</strong> et les discussions techniques sur des forums comme
+                <strong>Stack Exchange – Space</strong> ou certains projets open source liés à l'aéronautique sur <strong>GitHub</strong>.
             </p>
         </div>
-        
-        <div class="update">
-            <span class="update-date">Février 2026</span>
-            <p>SpaceX teste une nouvelle génération de satellites Starlink capables de communiquer entre eux via des lasers pour réduire la latence réseau globale.
-                <a href="https://www.spacex.com" target="_blank">[Source : SpaceX]</a>
-            </p>
+
+        <h3 style="text-align:center; margin-top:70px;">Évolution de la veille</h3>
+
+        <div class="veille-updates">
+
+            <div class="update">
+                <span class="update-date">Mars 2026</span>
+                <p>NASA annonce des avancées dans l'utilisation de l'IA embarquée pour optimiser la gestion énergétique des satellites, permettant d'augmenter leur durée de vie sans intervention humaine.
+                    <a href="https://www.nasa.gov" target="_blank">[Source : NASA]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Février 2026</span>
+                <p>SpaceX teste une nouvelle génération de satellites Starlink capables de communiquer entre eux via des lasers pour réduire la latence réseau globale.
+                    <a href="https://www.spacex.com" target="_blank">[Source : SpaceX]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Janvier 2026</span>
+                <p>L'ESA expérimente des systèmes embarqués capables de prendre des décisions en temps réel sans communication avec la Terre, notamment pour les missions lointaines.
+                    <a href="https://www.esa.int" target="_blank">[Source : ESA]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Janvier 2026</span>
+                <p>La NASA équipe ses prochains CubeSats du processeur <strong>RadPC-2</strong>, capable d'exécuter des modèles IA directement en orbite pour détecter les anomalies en temps réel.
+                    <a href="https://www.techbriefs.com" target="_blank">[Source : NASA Tech Briefs]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Décembre 2025</span>
+                <p>L'ESA publie une mise à jour majeure de <strong>OPS-SAT</strong>, permettant de tester des algorithmes embarqués avancés en vision par ordinateur pour les futures missions autonomes.
+                    <a href="https://www.esa.int" target="_blank">[Source : ESA]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Décembre 2025</span>
+                <p>Thales Alenia Space finalise un module <strong>QKD miniaturisé</strong> intégrable dans les petits satellites pour des communications quantiques sécurisées.
+                    <a href="https://www.thalesgroup.com" target="_blank">[Source : Thales]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Novembre 2025</span>
+                <p>Blue Origin valide un système de navigation autonome basé sur le <strong>LIDAR embarqué</strong> pour ses futures missions lunaires.
+                    <a href="https://arstechnica.com/space" target="_blank">[Source : Ars Technica]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Novembre 2025</span>
+                <p>La constellation européenne <strong>IRIS²</strong> adoptera un protocole de sécurité hybride utilisant du chiffrement quantique pour renforcer les communications.
+                    <a href="https://www.ppolitico.eu" target="_blank">[Source : Politico]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Octobre 2025</span>
+                <p>Lockheed Martin teste un système embarqué capable de <strong>réécrire ses propres modules logiciels en vol</strong> pour corriger automatiquement certaines erreurs.
+                    <a href="https://aviationweek.com" target="_blank">[Source : Aviation Week]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Octobre 2025</span>
+                <p>Honeywell et Redwire développent un satellite à communication quantique sécurisée.
+                    <a href="https://www.militaryaerospace.com/communications/news/55321425/honeywell-redwire-sign-mou-to-advance-quantum-secured-satellite-communications" target="_blank">[Source : MilitaryAerospace]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Octobre 2025</span>
+                <p>L'ESA signe un contrat de €50 millions avec Thales Alenia Space pour la mission <strong>SAGA</strong>, visant à implanter une distribution quantique de clés (QKD) depuis l'espace.
+                    <a href="https://connectivity.esa.int/news/esa-signs-contract-saga-mission-sovereign-quantum-key-distribution-capability-europe" target="_blank">[Source : ESA]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Septembre 2025</span>
+                <p>Le CNES réalise son premier test de <strong>edge computing spatial</strong>, avec traitement d'images directement à bord d'un satellite.
+                    <a href="https://cnes.fr" target="_blank">[Source : CNES]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Septembre 2025</span>
+                <p>SES prépare l'intégration de la <strong>communication quantique</strong> dans ses infrastructures, via des programmes de QKD spatiale.
+                    <a href="https://www.satellitetoday.com/cybersecurity/2025/09/16/how-ses-is-preparing-for-the-quantum-future/" target="_blank">[Source : Satellite Today]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Juillet 2025</span>
+                <p>Airbus Defence publie un rapport sur de nouvelles architectures de <strong>fault-tolerant computing</strong> permettant l'auto-réparation logicielle des satellites autonomes.
+                    <a href="https://www.airbus.com" target="_blank">[Source : Airbus]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Mars 2025</span>
+                <p>Blue Ghost effectue un <strong>atterrissage lunaire réussi</strong>, devenant l'un des premiers modules privés à atteindre la Lune.
+                    <a href="https://www.nasa.gov/image-article/blue-ghost-lands-on-moon/" target="_blank">[Source : NASA]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Janvier 2025</span>
+                <p>Firefly capture un <strong>"Earth selfie"</strong> en transit lunaire, démontrant l'efficacité du traitement embarqué d'image.
+                    <a href="https://fireflyspace.com/news/blue-ghost-mission-1-live-updates/" target="_blank">[Source : Firefly]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Décembre 2024</span>
+                <p>Le prototype <strong>VX4</strong> de Vertical Aerospace réalise ses premiers vols urbains autonomes.
+                    <a href="https://fr.wikipedia.org/wiki/Vertical_Aerospace_VX4" target="_blank">[Source : Wikipédia]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Juin 2024</span>
+                <p>Airbus Defence présente un module de communication sécurisé basé sur un protocole quantique pour les liaisons spatiales.
+                    <a href="https://www.airbus.com" target="_blank">[Source : Airbus]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Mars 2024</span>
+                <p>Des chercheurs explorent le <strong>neuromorphic computing</strong> pour les satellites, imitant le cerveau pour traiter localement les données spatiales.
+                    <a href="https://parallaxresearch.org" target="_blank">[Source : Parallax Research]</a>
+                </p>
+            </div>
+
+            <div class="update">
+                <span class="update-date">Janvier 2024</span>
+                <p>L'ESA commence les tests de systèmes embarqués basés sur l'IA pour détecter les anomalies en orbite basse.
+                    <a href="https://www.esa.int" target="_blank">[Source : ESA]</a>
+                </p>
+            </div>
+
         </div>
-        
-        <div class="update">
-            <span class="update-date">Janvier 2026</span>
-            <p>L’ESA expérimente des systèmes embarqués capables de prendre des décisions en temps réel sans communication avec la Terre, notamment pour les missions lointaines.
-                <a href="https://www.esa.int" target="_blank">[Source : ESA]</a>
-            </p>
-        </div>
-        
-        <div class="update">
-            <span class="update-date">Janvier 2026</span>
-            <p>La NASA équipe ses prochains CubeSats du processeur <strong>RadPC-2</strong>, capable d'exécuter des modèles IA directement en orbite pour détecter les anomalies en temps réel.
-            <a href="https://www.techbriefs.com" target="_blank">[Source : NASA Tech Briefs]</a></p>
-        </div>
 
-        <div class="update">
-            <span class="update-date">Décembre 2025</span>
-            <p>L’ESA publie une mise à jour majeure de <strong>OPS-SAT</strong>, permettant de tester des algorithmes embarqués avancés en vision par ordinateur pour les futures missions autonomes.
-            <a href="https://www.esa.int" target="_blank">[Source : ESA]</a></p>
+        <div class="voir-plus-container">
+            <button id="voir-plus-btn">Voir plus ▼</button>
         </div>
+    </section>
 
-        <div class="update">
-            <span class="update-date">Décembre 2025</span>
-            <p>Thales Alenia Space finalise un module <strong>QKD miniaturisé</strong> intégrable dans les petits satellites pour des communications quantiques sécurisées.
-            <a href="https://www.thalesgroup.com" target="_blank">[Source : Thales]</a></p>
+    <!-- SECTION DOCUMENTS -->
+    <section id="documents" class="section alt">
+        <h2>Documents</h2>
+        <p style="text-align: center; margin-bottom: 40px;">
+            Retrouvez ici mes documents professionnels à jour : CV, lettre de motivation et autres fichiers utiles.
+        </p>
+
+        <div class="doc-grid">
+            <a href="CV_Ethan_PASSARD.pdf" class="doc-card" target="_blank">
+                📄 <span>Mon CV</span>
+            </a>
+
+            <a href="Lettre_Motivation_Ethan_Passard.pdf" class="doc-card" target="_blank">
+                📝 <span>Lettre de motivation</span>
+            </a>
+
+            <a href="TDS_Ethan_Passard.pdf" class="doc-card" target="_blank">
+                📊 <span>Tableau de synthèse</span>
+            </a>
         </div>
+    </section>
 
-        <div class="update">
-            <span class="update-date">Novembre 2025</span>
-            <p>Blue Origin valide un système de navigation autonome basé sur le <strong>LIDAR embarqué</strong> pour ses futures missions lunaires.
-            <a href="https://arstechnica.com/space" target="_blank">[Source : Ars Technica]</a></p>
-        </div>
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p style="text-align: center; margin-bottom: 30px;">
+            Tu veux discuter, collaborer ou simplement échanger avec moi ?<br>
+            Voici les meilleurs moyens pour me contacter :
+        </p>
 
-        <div class="update">
-            <span class="update-date">Novembre 2025</span>
-            <p>La constellation européenne <strong>IRIS²</strong> adoptera un protocole de sécurité hybride utilisant du chiffrement quantique pour renforcer les communications.
-            <a href="https://www.ppolitico.eu" target="_blank">[Source : Politico]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Octobre 2025</span>
-            <p>Lockheed Martin teste un système embarqué capable de <strong>réécrire ses propres modules logiciels en vol</strong> pour corriger automatiquement certaines erreurs.
-            <a href="https://aviationweek.com" target="_blank">[Source : Aviation Week]</a></p>
+        <div class="contact-mail">
+            📧 <strong>ethanpassard@gmail.com</strong>
         </div>
 
-        <div class="update">
-            <span class="update-date">Octobre 2025</span>
-            <p>Honeywell et Redwire développent un satellite à communication quantique sécurisée.
-            <a href="https://www.militaryaerospace.com/communications/news/55321425/honeywell-redwire-sign-mou-to-advance-quantum-secured-satellite-communications" target="_blank">[Source : MilitaryAerospace]</a></p>
+        <div class="contact-buttons">
+            <a href="https://www.linkedin.com/in/ethan-passard-0255a6266/" class="contact-btn linkedin" target="_blank">
+                💼 LinkedIn
+            </a>
+            <a href="https://github.com/Eythannne" class="contact-btn github" target="_blank">
+                🧑‍💻 GitHub
+            </a>
         </div>
-
-        <div class="update">
-            <span class="update-date">Octobre 2025</span>
-            <p>L’ESA signe un contrat de €50 millions avec Thales Alenia Space pour la mission <strong>SAGA</strong>, visant à implanter une distribution quantique de clés (QKD) depuis l’espace.
-            <a href="https://connectivity.esa.int/news/esa-signs-contract-saga-mission-sovereign-quantum-key-distribution-capability-europe" target="_blank">[Source : ESA]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Septembre 2025</span>
-            <p>Le CNES réalise son premier test de <strong>edge computing spatial</strong>, avec traitement d’images directement à bord d’un satellite.
-            <a href="https://cnes.fr" target="_blank">[Source : CNES]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Septembre 2025</span>
-            <p>SES prépare l’intégration de la <strong>communication quantique</strong> dans ses infrastructures, via des programmes de QKD spatiale.
-            <a href="https://www.satellitetoday.com/cybersecurity/2025/09/16/how-ses-is-preparing-for-the-quantum-future/" target="_blank">[Source : Satellite Today]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Juillet 2025</span>
-            <p>Airbus Defence publie un rapport sur de nouvelles architectures de <strong>fault-tolerant computing</strong> permettant l’auto-réparation logicielle des satellites autonomes.
-            <a href="https://www.airbus.com" target="_blank">[Source : Airbus]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Mars 2025</span>
-            <p>Blue Ghost effectue un <strong>atterrissage lunaire réussi</strong>, devenant l’un des premiers modules privés à atteindre la Lune.
-            <a href="https://www.nasa.gov/image-article/blue-ghost-lands-on-moon/" target="_blank">[Source : NASA]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Janvier 2025</span>
-            <p>Firefly capture un <strong>“Earth selfie”</strong> en transit lunaire, démontrant l’efficacité du traitement embarqué d’image.
-            <a href="https://fireflyspace.com/news/blue-ghost-mission-1-live-updates/" target="_blank">[Source : Firefly]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Décembre 2024</span>
-            <p>Le prototype <strong>VX4</strong> de Vertical Aerospace réalise ses premiers vols urbains autonomes.
-            <a href="https://fr.wikipedia.org/wiki/Vertical_Aerospace_VX4" target="_blank">[Source : Wikipédia]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Juin 2024</span>
-            <p>Airbus Defence présente un module de communication sécurisé basé sur un protocole quantique pour les liaisons spatiales.
-            <a href="https://www.airbus.com" target="_blank">[Source : Airbus]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Mars 2024</span>
-            <p>Des chercheurs explorent le <strong>neuromorphic computing</strong> pour les satellites, imitant le cerveau pour traiter localement les données spatiales.
-            <a href="https://parallaxresearch.org" target="_blank">[Source : Parallax Research]</a></p>
-        </div>
-
-        <div class="update">
-            <span class="update-date">Janvier 2024</span>
-            <p>L’ESA commence les tests de systèmes embarqués basés sur l’IA pour détecter les anomalies en orbite basse.
-            <a href="https://www.esa.int" target="_blank">[Source : ESA]</a></p>
-        </div>
-    </div>
-
-    <div class="voir-plus-container">
-        <button id="voir-plus-btn">Voir plus ▼</button>
-    </div>
-</section>
-
-<!-- SECTION DOCUMENTS -->
-<section id="documents" class="section alt">
-    <h2>Documents</h2>
-    <p style="text-align: center; margin-bottom: 40px;">
-        Retrouvez ici mes documents professionnels à jour : CV, lettre de motivation et autres fichiers utiles.
-    </p>
-
-    <div class="doc-grid">
-        <a href="CV_Ethan_PASSARD.pdf" class="doc-card" target="_blank">
-            📄 <span>Mon CV</span>
-        </a>
-
-        <a href="Lettre_Motivation_Ethan_Passard.pdf" class="doc-card" target="_blank">
-            📝 <span>Lettre de motivation</span>
-        </a>
-
-        <a href="TDS_Ethan_Passard.pdf" class="doc-card" target="_blank">
-            📊 <span>Tableau de synthèse</span>
-        </a>
-    </div>
-</section>
-
-<!-- SECTION CONTACT -->
-<section id="contact" class="section">
-    <h2>Contact</h2>
-    <p style="text-align: center; margin-bottom: 30px;">
-        Tu veux discuter, collaborer ou simplement échanger avec moi ?<br>
-        Voici les meilleurs moyens pour me contacter :
-    </p>
-
-    <div class="contact-mail">
-        📧 <strong>ethanpassard@gmail.com</strong>
-    </div>
-
-    <div class="contact-buttons">
-        <a href="https://www.linkedin.com/in/ethan-passard-0255a6266/" class="contact-btn linkedin" target="_blank">
-            💼 LinkedIn
-        </a>
-        <a href="https://github.com/Eythannne" class="contact-btn github" target="_blank">
-            🧑‍💻 GitHub
-        </a>
-    </div>
-</section>
+    </section>
 
     <footer>
         <p>© 2026 - Ethan Passard</p>
     </footer>
 
-<script src="script.js"></script>
+    <!-- BOUTON RETOUR EN HAUT -->
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
