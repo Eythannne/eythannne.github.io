@@ -518,6 +518,7 @@ const revealElements = [
     { selector: "#contact h2",          cls: "reveal" },
     { selector: ".contact-mail",        cls: "reveal" },
     { selector: ".contact-btn",         cls: "reveal" },
+    { selector: ".contact-form-wrapper", cls: "reveal" },
 ];
 
 revealElements.forEach(({ selector, cls }) => {
@@ -577,6 +578,41 @@ const cursorGlow = document.getElementById("cursor-glow");
 document.addEventListener("mousemove", e => {
     cursorGlow.style.left = e.clientX + "px";
     cursorGlow.style.top  = e.clientY + "px";
+});
+
+
+// ---------------------------------------------
+// EMAILJS - FORMULAIRE DE CONTACT
+// ---------------------------------------------
+emailjs.init("giCEs5xJF6OCIFKsN");
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const btn     = this.querySelector(".form-submit-btn");
+    const btnText = document.getElementById("btn-text");
+    const status  = document.getElementById("form-status");
+
+    btn.disabled      = true;
+    btnText.textContent = "Envoi en cours...";
+    status.textContent  = "";
+    status.className    = "form-status";
+
+    emailjs.sendForm("service_c2s2iep", "template_2pngesw", this)
+        .then(() => {
+            status.textContent = "Message envoyé ! Je te répondrai bientôt.";
+            status.classList.add("success");
+            this.reset();
+        })
+        .catch((error) => {
+            status.textContent = "Erreur lors de l'envoi. Contacte-moi directement par email.";
+            status.classList.add("error");
+            console.error("EmailJS error:", error);
+        })
+        .finally(() => {
+            btn.disabled        = false;
+            btnText.textContent = "Envoyer ✉️";
+        });
 });
 
 

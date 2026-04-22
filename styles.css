@@ -618,6 +618,98 @@ code {
     letter-spacing: 0.5px;
 }
 
+/* --- FORMULAIRE DE CONTACT --- */
+.contact-form-wrapper {
+    max-width: 600px;
+    margin: 50px auto 0;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    border: 1px solid rgba(123, 97, 255, 0.2);
+    box-shadow: 0 0 25px rgba(123, 97, 255, 0.1);
+}
+
+.contact-form-title {
+    text-align: center;
+    color: #d4caff;
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(123, 97, 255, 0.25);
+    border-radius: 10px;
+    color: #f2f2f2;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(212, 202, 255, 0.4);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgba(123, 97, 255, 0.6);
+    box-shadow: 0 0 12px rgba(123, 97, 255, 0.2);
+}
+
+.form-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #7b61ff, #00bcd4);
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(123, 97, 255, 0.3);
+    margin-top: 8px;
+}
+
+.form-submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(123, 97, 255, 0.5);
+}
+
+.form-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-status {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+    min-height: 22px;
+}
+
+.form-status.success {
+    color: #7effa0;
+}
+
+.form-status.error {
+    color: #ff6b6b;
+}
+
 /* --- TOOLTIPS COMPÉTENCES --- */
 .soft-skills li {
     position: relative;
