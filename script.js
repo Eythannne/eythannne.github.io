@@ -39,34 +39,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// ---------------------------------------------
-// VEILLE TECHNOLOGIQUE (voir plus / voir moins)
-// ---------------------------------------------
-const updates = document.querySelectorAll(".veille-updates .update");
-const voirPlusBtn = document.getElementById("voir-plus-btn");
-
-if (updates.length > 5 && voirPlusBtn) {
-    updates.forEach((update, index) => {
-        update.classList.toggle("hidden", index >= 5);
-        update.classList.toggle("visible", index < 5);
-    });
-
-    let expanded = false;
-
-    voirPlusBtn.addEventListener("click", () => {
-        expanded = !expanded;
-
-        updates.forEach((update, index) => {
-            if (index >= 5) {
-                update.classList.toggle("hidden", !expanded);
-                update.classList.toggle("visible", expanded);
-            }
-        });
-
-        voirPlusBtn.textContent = expanded ? "Voir moins ▲" : "Voir plus ▼";
-    });
-}
-
 
 // ---------------------------------------------
 // MODALS PROJETS
@@ -511,8 +483,6 @@ const revealElements = [
     { selector: ".project-card",        cls: "reveal" },
     { selector: "#experiences h2",      cls: "reveal" },
     { selector: ".timeline-item",       cls: "reveal" },
-    { selector: "#veille h2",           cls: "reveal" },
-    { selector: ".veille-container",    cls: "reveal" },
     { selector: "#documents h2",        cls: "reveal" },
     { selector: ".doc-card",            cls: "reveal" },
     { selector: "#contact h2",          cls: "reveal" },
@@ -605,7 +575,8 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
             this.reset();
         })
         .catch((error) => {
-            status.textContent = "Erreur lors de l'envoi. Contacte-moi directement par email.";
+            const msg = error?.text || error?.message || JSON.stringify(error);
+            status.textContent = "Erreur : " + msg;
             status.classList.add("error");
             console.error("EmailJS error:", error);
         })

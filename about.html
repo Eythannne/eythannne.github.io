@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos — Ethan Passard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* --- PAGE ABOUT --- */
+        .about-page {
+            min-height: 100vh;
+            background: #0b1120;
+            padding: 60px 10% 80px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7b61ff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-bottom: 50px;
+            transition: gap 0.3s, opacity 0.3s;
+        }
+
+        .back-btn:hover {
+            gap: 12px;
+            opacity: 0.8;
+        }
+
+        .about-hero {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            flex-wrap: wrap;
+        }
+
+        .about-hero-photo {
+            flex-shrink: 0;
+        }
+
+        .about-hero-photo img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 90% 0%;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.5);
+        }
+
+        .about-hero-text {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .about-hero-text h1 {
+            font-size: 2.4em;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            text-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+        }
+
+        .about-hero-text .subtitle {
+            color: #00bcd4;
+            font-size: 1em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .about-hero-text p {
+            color: #d4caff;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        /* --- BLOCS THÉMATIQUES --- */
+        .about-blocks {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .about-block {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(123, 97, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .about-block:hover {
+            box-shadow: 0 0 25px rgba(123, 97, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .about-block.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .block-icon {
+            font-size: 2em;
+            margin-bottom: 14px;
+        }
+
+        .about-block h2 {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #7b61ff;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .about-block p {
+            color: #d4caff;
+            line-height: 1.8;
+            font-size: 0.97em;
+        }
+
+        /* --- VALEURS --- */
+        .values-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #d4caff;
+            font-size: 0.97em;
+            line-height: 1.6;
+        }
+
+        .values-list li span.icon {
+            color: #00bcd4;
+            font-size: 1.1em;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* --- FUN FACTS --- */
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .fact-item {
+            background: rgba(123, 97, 255, 0.08);
+            border: 1px solid rgba(123, 97, 255, 0.2);
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .fact-item .fact-emoji {
+            font-size: 1.8em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .fact-item p {
+            color: #d4caff;
+            font-size: 0.88em;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .about-blocks {
+                grid-template-columns: 1fr;
+            }
+
+            .about-block.full-width {
+                grid-column: auto;
+            }
+
+            .about-hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .facts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor-glow"></div>
+
+    <div class="about-page">
+
+        <a href="index.html" class="back-btn">← Retour au portfolio</a>
+
+        <!-- HERO -->
+        <div class="about-hero">
+            <div class="about-hero-photo">
+                <img src="image%20de%20moi%20drole.jpg" alt="Ethan Passard">
+            </div>
+            <div class="about-hero-text">
+                <h1>Ethan Passard</h1>
+                <p class="subtitle">Développeur web · Étudiant BTS SIO SLAM · Alternant</p>
+                <p>
+                    Passionné de code et de sport, je suis quelqu'un qui aime comprendre comment les choses fonctionnent,
+                    que ce soit un programme, une stratégie de jeu, ou un projet d'équipe.
+                    Cette page, c'est la version non-technique de mon profil — qui je suis vraiment, au-delà des lignes de code.
+                </p>
+            </div>
+        </div>
+
+        <!-- BLOCS -->
+        <div class="about-blocks">
+
+            <!-- Le sport -->
+            <div class="about-block">
+                <div class="block-icon">🎾</div>
+                <h2>Le sport, ma deuxième passion</h2>
+                <p>
+                    Le tennis est une grande partie de ma vie. Ce que j'aime dans ce sport, c'est qu'il exige
+                    autant de la tête que du corps : stratégie, concentration, gestion de la pression.
+                    Des qualités que je retrouve aussi dans le développement.
+                    Le sport m'a appris à ne pas lâcher face à un problème difficile.
+                </p>
+            </div>
+
+            <!-- Ma façon de travailler -->
+            <div class="about-block">
+                <div class="block-icon">💡</div>
+                <h2>Ma façon de travailler</h2>
+                <p>
+                    Je suis quelqu'un de méthodique. Avant de coder, je préfère comprendre le besoin,
+                    réfléchir à la structure, puis avancer proprement plutôt qu'à tâtons.
+                    J'aime les interfaces soignées et les projets qui ont du sens.
+                    Je travaille aussi bien seul qu'en équipe, et j'aime partager ce que j'apprends.
+                </p>
+            </div>
+
+            <!-- Ce qui m'anime -->
+            <div class="about-block">
+                <div class="block-icon">🚀</div>
+                <h2>Ce qui m'anime</h2>
+                <p>
+                    L'informatique appliquée à des domaines exigeants me fascine : l'aéronautique, le spatial,
+                    les systèmes embarqués. L'idée qu'une ligne de code puisse avoir un impact réel sur le monde,
+                    dans des environnements où rien ne peut foirer, c'est quelque chose qui me pousse à toujours
+                    viser plus haut et à être rigoureux dans ce que je fais.
+                </p>
+            </div>
+
+            <!-- Mes valeurs -->
+            <div class="about-block">
+                <div class="block-icon">⚡</div>
+                <h2>Mes valeurs</h2>
+                <ul class="values-list">
+                    <li><span class="icon">→</span> <span><strong>Honnêteté</strong> — je préfère dire que je ne sais pas plutôt que de bluffer.</span></li>
+                    <li><span class="icon">→</span> <span><strong>Persévérance</strong> — un bug, c'est un problème à résoudre, pas une raison d'abandonner.</span></li>
+                    <li><span class="icon">→</span> <span><strong>Curiosité</strong> — j'explore toujours au-delà de ce qu'on me demande.</span></li>
+                    <li><span class="icon">→</span> <span><strong>Fiabilité</strong> — quand je m'engage sur quelque chose, je le fais.</span></li>
+                </ul>
+            </div>
+
+            <!-- Fun facts -->
+            <div class="about-block full-width">
+                <div class="block-icon">✨</div>
+                <h2>Quelques détails sur moi</h2>
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <span class="fact-emoji">🎾</span>
+                        <p>Joueur de tennis depuis très très très longtemps</p>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-emoji">🌙</span>
+                        <p>Je code souvent mieux la nuit que le jour</p>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-emoji">🛰️</span>
+                        <p>Fasciné par l'aéronautique et le spatial</p>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-emoji">🎮</span>
+                        <p>Gamer à mes heures perdues</p>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-emoji">🔍</span>
+                        <p>Je cherche toujours à comprendre comment ça marche</p>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-emoji">☕</span>
+                        <p>Un chocolat chaud ne fais jamais de mal</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 - Ethan Passard</p>
+    </footer>
+
+    <script>
+        const cursorGlow = document.getElementById("cursor-glow");
+        document.addEventListener("mousemove", e => {
+            cursorGlow.style.left = e.clientX + "px";
+            cursorGlow.style.top  = e.clientY + "px";
+        });
+    </script>
+</body>
+</html>
